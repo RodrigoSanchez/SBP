@@ -1,5 +1,4 @@
-# SBP - A simple static setup for quick HTML prototyping or building "one-off"
-static pages.
+# SBP - A simple boilerplate setup for quick HTML prototyping or building "one-off" static pages.
 
 ## Description
 
@@ -14,9 +13,9 @@ requirements of the process I have developed and implemented at [Push](http://pu
 
 
 ## Inspiration
-HTML5 BoilerPlate [Info](http://html5boilerplate.com/)
-Bones [Info](http://themble.com/bones/)
-Skeleton [Info](http://www.getskeleton.com/)
+- HTML5 BoilerPlate [Info](http://html5boilerplate.com/)
+- Bones [Info](http://themble.com/bones/)
+- Skeleton [Info](http://www.getskeleton.com/)
 
 
 ## Synopsis
