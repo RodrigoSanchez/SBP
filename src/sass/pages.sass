@@ -1,0 +1,57 @@
+// space-indent: 2
+
+@charset "UTF-8"
+
+@import 'compass/css3'
+@import 'mixins/fonts.sass'
+@import 'mixins/normalize.sass'
+@import 'mixins/layout.sass'
+
+// Page not found / 500 Error
+
+::-moz-selection
+  background: #fe57a1
+  color: #fff
+  text-shadow: none
+::selection 
+  background: #fe57a1
+  color: #fff
+  text-shadow: none
+
+#page-not-found,
+#error
+  padding: 30px 10px
+  font-size: 20px
+  line-height: 1.4
+  color: #737373
+  background: #f0f0f0
+  max-height: 100%
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+#page-not-found #shell,
+#error #shell
+  max-width: 500px
+  _width: 500px
+  padding: 30px 20px 50px
+  border: 1px solid #b3b3b3
+  +border-radius( 4px, 4px)
+  margin: 0 auto
+  background: #fcfcfc
+  //box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff; 
+
+  #container
+    max-width: 380px
+    _width: 380px
+    margin: 0 auto
+
+    h1
+      margin: 0 10px
+      font-size: 50px
+      text-align: center
+
+      span
+        color: #bbb
+
+    p 
+      text-align: center

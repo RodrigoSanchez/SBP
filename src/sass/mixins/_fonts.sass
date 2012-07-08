@@ -1,0 +1,9 @@
+// space-indent: 2
+
+// Correct font-face syntax
+@mixin font-face( $name, $weight:normal, $style:normal )
+  font-family: 'FontName'
+  src: url('../fonts/$name.eot')
+  src: url('../fonts/$name.eot?iefix') format('eot'), url('../fonts/$name.woff') format('woff'), url('../fonts/$name.ttf') format('truetype'), url('../fonts/$name.svg#webfontZam02nTh') format('svg')
+  font-weight: $weight
+  font-style: $style

@@ -1,0 +1,24 @@
+// space-indent: 2
+
+
+// Calculate Grid
+
+$grid-width: 60px
+$gutter-width: 10px
+$columns-count: 12
+
+@function columns-width($n, $width: $grid-width)
+  @return $n * $width + (($n - 1) * ($gutter-width * 2))
+
+@mixin columns($n)
+  width: columns-width($n)
+  margin-left: 10px
+  margin-right: 10px
+  float: left
+  @media only screen and (min-width: 768px) and (max-width: 959px)
+    width: columns_width($n,44px)
+  @media only screen and (max-width: 767px)
+    width: auto
+    margin-left: 0
+    margin-right: 0
+    float: none

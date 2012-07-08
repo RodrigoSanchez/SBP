@@ -1,0 +1,125 @@
+// space-indent: 2
+
+// Print Styles
+.print-only
+  display: none !important
+  @media print
+    *
+      background: transparent !important
+      color: black !important
+      text-shadow: none !important
+      filter: none !important
+      -ms-filter: none !important
+
+    p a, p a:visited 
+      color: #444 !important
+      text-decoration: underline
+
+    p a[href]:after
+      content: " (" attr(href) ")"
+
+    abbr[title]:after 
+      content: " (" attr(title) ")"
+
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after
+      content: ""
+    pre, blockquote
+      border: 1px solid #999
+      page-break-inside: avoid
+
+    thead 
+      display: table-header-group
+
+    tr, img 
+      page-break-inside: avoid
+    @page
+      margin: 0.5cm
+    p, h2, h3 
+      orphans: 3
+      widows: 3
+
+    h2, h3 
+      page-break-after: avoid
+
+    .hide-on-print  
+      display: none !important
+
+    .print-only
+      display: block !important
+
+
+// Global
+.wai
+  position: absolute
+  left: -99em
+
+section, aside, footer
+  display: block
+
+
+// Colors
+$white: rgb(255, 255, 255)
+$black: rgb(0, 0, 0)
+
+
+// Image
+@mixin imagebg( $imgURL, $color: transparent, $image-width: 200px, $image-height: 200px, $image-repeat: no-repeat, $image-x: 0, $image-y: 0 )
+  width: $image-width
+  height: $image-height
+  background: $color image-url("#{$imgURL}") $image-x $image-y $image-repeat
+
+
+// Text
+@mixin text( $font: 'helvetica, arial, sans-serif', $size: 1.4em, $weight: normal, $height: 1em, $color: $black, $transform: none, $spacing: normal, $padding: 0, $margin: 0, $decoration: none )
+  font-family: $font
+  font-size: $size
+  font-weight: $weight
+  line-height: $height
+  color: $color
+  text-transform: $transform
+  letter-spacing: $spacing
+  padding: $padding
+  margin: $margin
+  text-decoration: $decoration
+  text-align: baseline
+
+
+// Form Styles
+@mixin form-style( $border: 0 transparent, $radius: 5px\, 5px)
+  border: $border
+  +box-shadow( 0 1px 1px rgba(50, 50, 50, 0.35) inset )
+  +border-radius($radius)
+  padding: 0 0 0 5px
+
+
+// Before
+@mixin before( $position, $background: none, $image-width: 0, $image-height: 0, $position-top: 0, $position-left: 0 ) 
+  &:before
+    content: " "
+    display: block
+    position: $position
+    top: $position-top
+    left: $position-left 
+    width: $image-width
+    height: $image-height
+    background: $background
+
+
+// After
+@mixin after( $position, $background: none, $image-width: 0, $image-height: 0, $position-top: 0, $position-left: 0 ) 
+  &:after
+    content: " "
+    display: block
+    position: $position
+    top: $position-top
+    left: $position-left 
+    width: $image-width
+    height: $image-height
+    background: $background
+
+
+// Animate
+@mixin animate( $property: all, $timing: .4s, $transition: ease-out )
+  +transition-property($property)
+  +transition-duration($timing)
+  +transition-timing-function($transition)
